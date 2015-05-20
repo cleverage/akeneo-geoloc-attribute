@@ -1,0 +1,27 @@
+parameters:
+    cleverage.geolocation.attribute_type.class: CleverAge\Bundle\GelocAttributeBundle\AttributeType\GeolocationType
+    cleverage.geolocation.form_type.class: CleverAge\Bundle\GelocAttributeBundle\Form\Type\GeolocationType
+    cleverage.geolocation.model.class: CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation
+
+    ### Geolocation datagrid configuration
+    pim_datagrid.product.attribute_type.cleverage_attribute_geolocation:
+        column:
+            type:        product_value_field
+            selector:    product_value_base
+        filter: ~
+        sorter: ~
+
+services:
+    cleverage.geolocation.attribute_type:
+        class: CleverAge\Bundle\GelocAttributeBundle\AttributeType\GeolocationType
+        arguments:
+            - geolocation
+            - cleverage_form_geolocation
+            - '@pim_catalog.validator.constraint_guesser.chained_attribute'
+        tags:
+            - { name: pim_catalog.attribute_type, alias: cleverage_attribute_geolocation, entity: %pim_catalog.entity.product.class% }
+
+    cleverage.geolocation.form_type:
+        class: CleverAge\Bundle\GelocAttributeBundle\Form\Type\GeolocationType
+        tags:
+            - { name: form.type, alias: cleverage_form_geolocation }

@@ -1,0 +1,10 @@
+CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation:
+    properties:
+        latitude:
+            - Range:
+                min: -90
+                max: 90
+        longitude:
+            - Range:
+                min: -180
+                max: 180
