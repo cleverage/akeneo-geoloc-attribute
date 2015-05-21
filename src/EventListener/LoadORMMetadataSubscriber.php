@@ -46,24 +46,30 @@ class LoadORMMetadataSubscriber implements EventSubscriber
      */
     public function loadClassMetadata(LoadClassMetadataEventArgs $eventArgs)
     {
-        /** @var ClassMetadata $classMetadata */
-        $classMetadata = $eventArgs->getClassMetadata();
+        /** @var ClassMetadata $productValueMetadata */
+        $productValueMetadata = $eventArgs->getClassMetadata();
 
-        if ($this->pimProductValueModel === $classMetadata->getName()) {
+        if ($this->productValueModel === $productValueMetadata->getName()) {
             $metadataFactory = $eventArgs->getEntityManager()->getMetadataFactory();
-            $classMetadata->name = $this->productValueModel;
 
-            $classMetadata->mapOneToOne([
-                'targetEntity'  => $this->geolocationModel,
-                'fieldName' => 'geolocation',
-                'cascade' => ['all'],
-                'joinColumn' => [
-                    'referencedColumnName' => 'id',
-                    'onDelete'  => 'CASCADE',
-                ],
-            ]);
+            $pimProductValueMetadata = $metadataFactory->getMetadataFor('Pim\Bundle\CatalogBundle\Model\ProductValue');
 
-            $metadataFactory->setMetadataFor($this->productValueModel, $classMetadata);
+            if (false === $pimProductValueMetadata->isMappedSuperclass) {
+                $productValueMetadata = clone $pimProductValueMetadata;
+                $productValueMetadata->mapOneToOne([
+                    'targetEntity'  => $this->geolocationModel,
+                    'fieldName' => 'geolocation',
+                    'cascade' => ['all'],
+                    'joinColumn' => [
+                        'referencedColumnName' => 'id',
+                        'onDelete'  => 'CASCADE',
+                    ],
+                ]);
+
+                $metadataFactory->setMetadataFor($this->productValueModel, $productValueMetadata);
+            }
+
+            $pimProductValueMetadata->isMappedSuperclass = true;
         }
     }
 }

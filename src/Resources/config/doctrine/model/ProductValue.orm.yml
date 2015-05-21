@@ -1,0 +1,2 @@
+CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue:
+    type: mappedSuperclass
