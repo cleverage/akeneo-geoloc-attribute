@@ -1,4 +1,8 @@
 parameters:
+    ### Pim classes
+    pim_catalog.entity.product_value.class: CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue
+
+    ### Bundle classes
     cleverage.geolocation.attribute_type.class: CleverAge\Bundle\GelocAttributeBundle\AttributeType\GeolocationType
     cleverage.geolocation.form_type.class: CleverAge\Bundle\GelocAttributeBundle\Form\Type\GeolocationType
     cleverage.geolocation.model.class: CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation
@@ -13,7 +17,7 @@ parameters:
 
 services:
     cleverage.geolocation.attribute_type:
-        class: CleverAge\Bundle\GelocAttributeBundle\AttributeType\GeolocationType
+        class: %cleverage.geolocation.attribute_type.class%
         arguments:
             - geolocation
             - cleverage_form_geolocation
@@ -22,6 +26,6 @@ services:
             - { name: pim_catalog.attribute_type, alias: cleverage_attribute_geolocation, entity: %pim_catalog.entity.product.class% }
 
     cleverage.geolocation.form_type:
-        class: CleverAge\Bundle\GelocAttributeBundle\Form\Type\GeolocationType
+        class: %cleverage.geolocation.form_type.class%
         tags:
             - { name: form.type, alias: cleverage_form_geolocation }
