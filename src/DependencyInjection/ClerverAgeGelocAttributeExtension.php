@@ -24,7 +24,7 @@ class ClerverAgeGelocAttributeExtension extends Extension implements PrependExte
      */
     public function load(array $config, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config/service'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('attribute.yml');
         $loader->load('event_listener.yml');
         $loader->load('model.yml');
@@ -41,7 +41,7 @@ class ClerverAgeGelocAttributeExtension extends Extension implements PrependExte
             $container->prependExtensionConfig('twig', [
                 'form' => [
                     'resources' => [
-                        'ClerverAgeGelocAttribute::form.html.twig',
+                        'ClerverAgeGelocAttributeBundle::form.html.twig',
                     ],
                 ]
             ]);
