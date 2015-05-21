@@ -1,0 +1,8 @@
+geolocation:
+    attribute:
+        message:
+            enter_address: Enter an address
+        latitude:
+            label: Latitude
+        longitude:
+            label: Longitude
