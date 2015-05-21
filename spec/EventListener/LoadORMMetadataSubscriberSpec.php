@@ -23,6 +23,7 @@ class LoadORMMetadataSubscriberSpec extends ObjectBehavior
     function let()
     {
         $this->beConstructedWith(
+            'Pim\Bundle\CatalogBundle\Model\ProductValue',
             'CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue',
             'CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation'
         );
@@ -48,26 +49,18 @@ class LoadORMMetadataSubscriberSpec extends ObjectBehavior
     function it_add_geolocation_to_product_value(
         LoadClassMetadataEventArgs $eventArgs,
         ClassMetadata $classMetadata,
-        ObjectManager $objectManager,
-        ClassMetadataFactory $classMetadataFactory,
         ClassMetadata $productValueClassMetadata
     ) {
         $eventArgs->getClassMetadata()->willReturn($classMetadata);
-        $eventArgs->getEntityManager()->willReturn($objectManager);
-        $objectManager->getMetadataFactory()->willReturn($classMetadataFactory);
 
         $productValueClassMetadata->fieldMappings = ['id' => ['columnName' => 'id']];
-
-        $classMetadata->getName()
-            ->willReturn('CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue');
-        $classMetadataFactory->getMetadataFor('CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue')
-            ->willReturn($productValueClassMetadata);
+        $classMetadata->getName()->willReturn('Pim\Bundle\CatalogBundle\Model\ProductValue');
 
         $classMetadata->mapOneToOne([
             'targetEntity'  => 'CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation',
             'fieldName' => 'geolocation',
             'cascade' => ['all'],
-            'joinColumns' => [
+            'joinColumn' => [
                 'referencedColumnName'  => 'id',
                 'onDelete'  => 'CASCADE',
             ]

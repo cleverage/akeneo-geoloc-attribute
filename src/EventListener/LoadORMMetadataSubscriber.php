@@ -18,12 +18,15 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 class LoadORMMetadataSubscriber implements EventSubscriber
 {
     /** @var string */
+    private $pimProductValueModel;
+    /** @var string */
     private $productValueModel;
     /** @var string */
     private $geolocationModel;
 
-    public function __construct($productValueModel, $geolocationModel)
+    public function __construct($pimProductValueModel, $productValueModel, $geolocationModel)
     {
+        $this->pimProductValueModel = $pimProductValueModel;
         $this->productValueModel = $productValueModel;
         $this->geolocationModel = $geolocationModel;
     }
@@ -46,16 +49,15 @@ class LoadORMMetadataSubscriber implements EventSubscriber
         /** @var ClassMetadata $classMetadata */
         $classMetadata = $eventArgs->getClassMetadata();
 
-        if ($this->productValueModel === $classMetadata->getName()) {
-            $metadataFactory = $eventArgs->getEntityManager()->getMetadataFactory();
-            $targetEntityMetadata = $metadataFactory->getMetadataFor($this->productValueModel);
+        if ($this->pimProductValueModel === $classMetadata->getName()) {
+            $classMetadata->name = $this->productValueModel;
 
             $classMetadata->mapOneToOne([
                 'targetEntity'  => $this->geolocationModel,
                 'fieldName' => 'geolocation',
                 'cascade' => ['all'],
-                'joinColumns' => [
-                    'referencedColumnName' => $targetEntityMetadata->fieldMappings['id']['columnName'],
+                'joinColumn' => [
+                    'referencedColumnName' => 'id',
                     'onDelete'  => 'CASCADE',
                 ],
             ]);

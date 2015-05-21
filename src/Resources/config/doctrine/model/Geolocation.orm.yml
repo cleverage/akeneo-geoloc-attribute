@@ -1,0 +1,15 @@
+CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation:
+    type: entity
+    table: cleverage_geolocation
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        latitude:
+            type: float
+            nullable: true
+        longitude:
+            type: float
+            nullable: true
