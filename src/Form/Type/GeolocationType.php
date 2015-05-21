@@ -24,10 +24,10 @@ class GeolocationType extends AbstractType
     {
         $builder
             ->add('latitude', 'text', [
-                'label' => 'cleverage.geolocation.latitude.label',
+                'label' => 'geolocation.attribute.latitude.label',
             ])
             ->add('longitude', 'text', [
-                'label' => 'cleverage.geolocation.longitude.label',
+                'label' => 'geolocation.attribute.longitude.label',
             ])
         ;
     }
