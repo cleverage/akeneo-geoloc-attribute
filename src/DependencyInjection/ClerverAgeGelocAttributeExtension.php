@@ -24,6 +24,8 @@ class ClerverAgeGelocAttributeExtension extends Extension
     public function load(array $config, ContainerBuilder $container)
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config/service'));
-        $loader->load('attribute');
+        $loader->load('attribute.yml');
+        $loader->load('event_listener.yml');
+        $loader->load('model.yml');
     }
 }

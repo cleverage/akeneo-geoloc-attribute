@@ -1,11 +1,7 @@
 parameters:
-    ### Pim classes
-    pim_catalog.entity.product_value.class: CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue
-
     ### Bundle classes
     cleverage.geolocation.attribute_type.class: CleverAge\Bundle\GelocAttributeBundle\AttributeType\GeolocationType
     cleverage.geolocation.form_type.class: CleverAge\Bundle\GelocAttributeBundle\Form\Type\GeolocationType
-    cleverage.geolocation.model.class: CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation
 
     ### Geolocation datagrid configuration
     pim_datagrid.product.attribute_type.cleverage_attribute_geolocation:
