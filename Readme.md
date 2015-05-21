@@ -31,7 +31,7 @@ For more information on SemVer, please visit [semver.org website](http://semver.
 MIT License
 -----------
 
-License can be found [here](https://github.com/cleverage/akeneo-geoloc-attribute/blob/master/Resources/meta/LICENSE).
+License can be found [here](https://github.com/cleverage/akeneo-geoloc-attribute/blob/master/src/Resources/meta/LICENSE).
 
 Authors
 -------
