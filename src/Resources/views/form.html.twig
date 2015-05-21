@@ -1,0 +1,58 @@
+{% extends 'PimUIBundle:Form:pim-fields.html.twig' %}
+
+{% block cbo_form_geolocation_widget %}
+    {{ block('form_rest') }}
+
+    <input data-addresspiker="{{ id }}_address"
+           class="gelocation-address"
+           type="text" placeholder="{{ 'cbo.geolocation.message.enter_address'|trans }}">
+    <div data-addresspiker="{{ id }}_map" class="gelocation-map"></div>
+
+    <script type="text/javascript" charset="utf-8">
+        require([
+            'jquery',
+            'addresspicker',
+            'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places'
+            ],function ($) {
+
+            var map = function() {
+                var $latitudeInput = $('#{{ id }}_latitude'),
+                    $longitudeInput = $('#{{ id }}_longitude'),
+                    latitude = '' == $latitudeInput.val() ? 42 : $latitudeInput.val(),
+                    longitude = '' == $longitudeInput.val() ? 2 : $longitudeInput.val(),
+                    $addressInput = $('[data-addresspiker="{{ id }}_address"]'),
+                    addressPicker = new AddressPicker({
+                        map: {
+                            zoom: 5,
+                            id: '[data-addresspiker="{{ id }}_map"]',
+                            center: new google.maps.LatLng(latitude, longitude)
+                        },
+                        marker: {
+                            visible: true
+                        }
+                    }),
+                    $addressPicker = $(addressPicker);
+
+                $addressInput.typeahead(null, {
+                    displayKey: 'description',
+                    source: addressPicker.ttAdapter()
+                }).bind({
+                    'typeahead:selected': addressPicker.updateMap,
+                    'typeahead:cursorchanged': addressPicker.updateMap
+                });
+
+                $addressPicker.on('addresspicker:selected', function (event, result) {
+                    $latitudeInput.val(result.lat());
+                    $longitudeInput.val(result.lng());
+                });
+            }
+
+            $( function() {
+                map();
+                $('a[href="#tabs-4"]').on('click', function() {
+                    setTimeout(map, 200);
+                });
+            });
+        });
+    </script>
+{% endblock %}

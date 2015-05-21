@@ -13,6 +13,7 @@ namespace spec\CleverAge\Bundle\GelocAttributeBundle\DependencyInjection;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class ClerverAgeGelocAttributeExtensionSpec extends ObjectBehavior
 {
@@ -24,5 +25,23 @@ class ClerverAgeGelocAttributeExtensionSpec extends ObjectBehavior
     public function it_is_extension()
     {
         $this->shouldHaveType('Symfony\Component\HttpKernel\DependencyInjection\Extension');
+        $this->shouldImplement('Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface');
+    }
+
+    public function it_sets_up_the_configuration(ContainerBuilder $container)
+    {
+        $container->getParameter('kernel.bundles')->willReturn([
+            'TwigBundle' => '',
+        ]);
+
+        $container->prependExtensionConfig('twig', [
+            'form' => [
+                'resources' => [
+                    'ClerverAgeGelocAttribute::form.html.twig',
+                ],
+            ]
+        ])->shouldBeCalled();
+
+        $this->prepend($container);
     }
 }

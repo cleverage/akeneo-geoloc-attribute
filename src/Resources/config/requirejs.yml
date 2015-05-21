@@ -1,0 +1,9 @@
+config:
+    shim:
+        addresspicker:
+            deps:
+                - typeahead
+    paths:
+        async: clerveragegelocattribute/js/vendors/requirejs/async
+        typeahead: clerveragegelocattribute/js/vendors/typeahead/typeahead
+        addresspicker: clerveragegelocattribute/js/vendors/addresspicker/addresspicker

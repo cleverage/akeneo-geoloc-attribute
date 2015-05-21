@@ -13,10 +13,11 @@ namespace CleverAge\Bundle\GelocAttributeBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class ClerverAgeGelocAttributeExtension extends Extension
+class ClerverAgeGelocAttributeExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
@@ -27,5 +28,23 @@ class ClerverAgeGelocAttributeExtension extends Extension
         $loader->load('attribute.yml');
         $loader->load('event_listener.yml');
         $loader->load('model.yml');
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function prepend(ContainerBuilder $container)
+    {
+        $bundles = $container->getParameter('kernel.bundles');
+
+        if (isset($bundles['TwigBundle'])) {
+            $container->prependExtensionConfig('twig', [
+                'form' => [
+                    'resources' => [
+                        'ClerverAgeGelocAttribute::form.html.twig',
+                    ],
+                ]
+            ]);
+        }
     }
 }
