@@ -49,11 +49,14 @@ class LoadORMMetadataSubscriberSpec extends ObjectBehavior
     function it_add_geolocation_to_product_value(
         LoadClassMetadataEventArgs $eventArgs,
         ClassMetadata $classMetadata,
-        ClassMetadata $productValueClassMetadata
+        ObjectManager $objectManager,
+        ClassMetadataFactory $classMetadataFactory
     ) {
         $eventArgs->getClassMetadata()->willReturn($classMetadata);
+        $eventArgs->getEntityManager()->willReturn($objectManager);
+        $objectManager->getMetadataFactory()->willReturn($classMetadataFactory);
 
-        $productValueClassMetadata->fieldMappings = ['id' => ['columnName' => 'id']];
+        $classMetadata->fieldMappings = ['id' => ['columnName' => 'id']];
         $classMetadata->getName()->willReturn('Pim\Bundle\CatalogBundle\Model\ProductValue');
 
         $classMetadata->mapOneToOne([
@@ -65,6 +68,11 @@ class LoadORMMetadataSubscriberSpec extends ObjectBehavior
                 'onDelete'  => 'CASCADE',
             ]
         ])->shouldBeCalled();
+
+        $classMetadataFactory->setMetadataFor(
+            'CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue',
+            $classMetadata
+        )->shouldBeCalled();
 
         $this->loadClassMetadata($eventArgs);
     }

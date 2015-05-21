@@ -50,6 +50,7 @@ class LoadORMMetadataSubscriber implements EventSubscriber
         $classMetadata = $eventArgs->getClassMetadata();
 
         if ($this->pimProductValueModel === $classMetadata->getName()) {
+            $metadataFactory = $eventArgs->getEntityManager()->getMetadataFactory();
             $classMetadata->name = $this->productValueModel;
 
             $classMetadata->mapOneToOne([
@@ -61,6 +62,8 @@ class LoadORMMetadataSubscriber implements EventSubscriber
                     'onDelete'  => 'CASCADE',
                 ],
             ]);
+
+            $metadataFactory->setMetadataFor($this->productValueModel, $classMetadata);
         }
     }
 }
