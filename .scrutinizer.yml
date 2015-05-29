@@ -1,0 +1,29 @@
+before_commands:
+    - "composer install --prefer-source"
+
+tools:
+    php_code_sniffer:
+        enabled: true
+        config:
+            standard: PSR2
+        filter:
+            excluded_paths: ["vendor/*", "spec/*"]
+    php_cpd:
+        enabled: true
+        filter:
+            excluded_paths: ["vendor/*", "spec/*"]
+    php_cs_fixer:
+        enabled: true
+        filter:
+            excluded_paths: ["vendor/*", "spec/*"]
+    php_mess_detector:
+        enabled: true
+        filter:
+            excluded_paths: ["vendor/*", "spec/*"]
+    php_pdepend:
+        enabled: true
+        excluded_dirs: ["vendor/*", "spec/*"]
+    php_analyzer:
+        enabled: true
+        filter:
+            excluded_paths: ["vendor/*", "spec/*"]
