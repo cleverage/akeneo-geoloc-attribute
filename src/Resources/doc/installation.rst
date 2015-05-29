@@ -15,7 +15,7 @@ Otherwise you have to download .phar file.
 .. code-block:: bash
 
     $ curl -sS https://getcomposer.org/installer | php
-    $ php composer.phar require "sylius/resource-bundle"
+    $ php composer.phar require "cleverage/akeneo-geoloc-attribute"
 
 Adding required bundles to the kernel
 -------------------------------------
@@ -31,7 +31,7 @@ You just need to enable proper bundles inside the kernel.
     public function registerBundles()
     {
         $bundles = array(
-            new \CleverAge\Bundle\GelocAttributeBundle\ClerverAgeGelocAttributeBundle(),
+            new CleverAge\Bundle\GelocAttributeBundle\ClerverAgeGelocAttributeBundle(),
         );
     }
 
@@ -41,3 +41,13 @@ Updating the database
 .. code-block:: bash
 
     php app/console doctrine:schema:update --force
+
+Updating the assets
+-------------------
+
+This bundle provide a css file named ``geolocation.css``, you need to include it in your layout. After that your need
+to install your assets
+
+.. code-block:: bash
+
+    php app/console pim:install:assets
