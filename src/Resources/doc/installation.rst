@@ -45,8 +45,8 @@ Updating the database
 Updating the assets
 -------------------
 
-This bundle provide a css file named ``geolocation.css``, you need to include it in your layout. After that your need
-to install your assets
+This bundle provides a css file named ``geolocation.css``, you need to include it in your layout. After that, your need
+to install your assets like taht :
 
 .. code-block:: bash
 
