@@ -46,7 +46,7 @@ Updating the assets
 -------------------
 
 This bundle provides a css file named ``geolocation.css``, you need to include it in your layout. After that, your need
-to install your assets like taht :
+to install your assets like that :
 
 .. code-block:: bash
 

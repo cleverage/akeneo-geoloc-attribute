@@ -90,7 +90,7 @@ CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue:
             cascade:
                 - refresh
             joinTable:
-                name: cbo_catalog_product_value_option
+                name: cleverage_catalog_product_value_option
                 joinColumns:
                     value_id:
                         referencedColumnName: id
