@@ -1,7 +1,7 @@
-GelocAttributeBundle  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/?branch=master)
+GelocAttributeBundle  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/?branch=master) [![Build Status](https://travis-ci.org/cleverage/akeneo-geoloc-attribute.svg?branch=master)](https://travis-ci.org/cleverage/akeneo-geoloc-attribute)
 ====================
 
-Geolocation is an attribute for Akeneo PIM, it adds two fields (latitude and longitude) to your product form. You
+Geolocation is an attribute for Akeneo PIM, it adds latitude and longitude field to your product form. You
 can fill automatically them by using a google maps. See the screenshot :
 
 ![Geolocation](https://github.com/cleverage/akeneo-geoloc-attribute/blob/master/src/Resources/public/img/geolocation.png?raw=true)

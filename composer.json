@@ -1,6 +1,6 @@
 {
   "name": "cleverage/akeneo-geoloc-attribute",
-  "license": "",
+  "license": "MIT",
   "type": "bundle",
   "description": "",
   "require": {

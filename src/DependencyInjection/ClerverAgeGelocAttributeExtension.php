@@ -42,7 +42,7 @@ class ClerverAgeGelocAttributeExtension extends Extension implements PrependExte
                     'resources' => [
                         'ClerverAgeGelocAttributeBundle::form.html.twig',
                     ],
-                ]
+                ],
             ]);
         }
     }

@@ -21,8 +21,7 @@ class RegisterTargetEntityPass extends AbstractResolveDoctrineTargetModelPass
     protected function getParametersMapping()
     {
         return [
-            'CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface' => 'cleverage.geolocation.model.geolocation.class'
+            'CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface' => 'cleverage.geolocation.model.geolocation.class',
         ];
     }
-
 }

@@ -26,7 +26,7 @@ class ClerverAgeGelocAttributeBundle extends Bundle
         $container->addCompilerPass(new RegisterTargetEntityPass());
 
         $container->addCompilerPass(DoctrineOrmMappingsPass::createYamlMappingDriver(
-            array(dirname(__FILE__).'/Resources/config/doctrine/model' => 'CleverAge\Bundle\GelocAttributeBundle\Model'),
+            array($this->getPath().'/Resources/config/doctrine/model' => 'CleverAge\Bundle\GelocAttributeBundle\Model'),
             array('doctrine.orm.entity_manager')
         ));
     }
