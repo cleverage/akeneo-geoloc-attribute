@@ -37,7 +37,7 @@ class ClerverAgeGelocAttributeExtensionSpec extends ObjectBehavior
         $container->prependExtensionConfig('twig', [
             'form' => [
                 'resources' => [
-                    'ClerverAgeGelocAttribute::form.html.twig',
+                    'ClerverAgeGelocAttributeBundle::form.html.twig',
                 ],
             ]
         ])->shouldBeCalled();
