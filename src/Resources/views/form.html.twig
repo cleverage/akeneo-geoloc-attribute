@@ -15,43 +15,75 @@
             'async!https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places'
             ],function ($) {
 
-            var map = function() {
-                var $latitudeInput = $('#{{ id }}_latitude'),
-                    $longitudeInput = $('#{{ id }}_longitude'),
-                    latitude = '' == $latitudeInput.val() ? 42 : $latitudeInput.val(),
-                    longitude = '' == $longitudeInput.val() ? 2 : $longitudeInput.val(),
-                    $addressInput = $('[data-addresspiker="{{ id }}_address"]'),
-                    addressPicker = new AddressPicker({
+            var geolocation = {
+                $latitude: $('#{{ id }}_latitude'),
+                $longitude: $('#{{ id }}_longitude'),
+                $address: $('[data-addresspiker="{{ id }}_address"]'),
+                $addressPicker: null,
+
+                init: function() {
+                    var addressPicker = new AddressPicker({
                         map: {
                             zoom: 5,
                             id: '[data-addresspiker="{{ id }}_map"]',
-                            center: new google.maps.LatLng(latitude, longitude)
+                            center: new google.maps.LatLng(this.getLatitude(), this.getLongitude())
                         },
                         marker: {
                             visible: true
                         }
-                    }),
-                    $addressPicker = $(addressPicker);
+                    });
 
-                $addressInput.typeahead(null, {
-                    displayKey: 'description',
-                    source: addressPicker.ttAdapter()
-                }).bind({
-                    'typeahead:selected': addressPicker.updateMap,
-                    'typeahead:cursorchanged': addressPicker.updateMap
-                });
+                    this.$addressPicker = $(addressPicker);
+                    this.$addressPicker.on('addresspicker:selected', $.proxy(this.updateCoordinates, this));
 
-                $addressPicker.on('addresspicker:selected', function (event, result) {
-                    $latitudeInput.val(result.lat());
-                    $longitudeInput.val(result.lng());
-                });
-            }
+                    this.$address.typeahead(null, {
+                        displayKey: 'description',
+                        source: addressPicker.ttAdapter()
+                    }).bind({
+                        'typeahead:selected': addressPicker.updateMap,
+                        'typeahead:cursorchanged': addressPicker.updateMap
+                    });
+
+                    return this;
+                },
+
+                listen:  function() {
+                    var that = this;
+
+                    // The attribute is not on an opened tab
+                    $(document).on('click', 'a[data-toggle="tab"]', function() {
+                        setTimeout($.proxy(that.init, that), 200);
+                    });
+
+                    // Mass attribute edition
+                    $(document).on('click', '.ui-multiselect-footer .btn.btn-small', function() {
+                        setTimeout($.proxy(that.init, that), 200);
+                    });
+
+                    return this;
+                },
+
+                getLatitude: function() {
+                    var latitude = this.$latitude.val();
+
+                    return '' == latitude ? 42 : latitude;
+                },
+
+                getLongitude: function() {
+                    var longitude = this.$longitude.val();
+
+                    return '' == longitude ? 2 : longitude;
+                },
+
+                updateCoordinates: function(event, result) {
+                    this.$latitude.val(result.lat());
+                    this.$longitude.val(result.lng());
+                }
+            };
 
             $( function() {
-                map();
-                $('a[href="#tabs-4"]').on('click', function() {
-                    setTimeout(map, 200);
-                });
+                geolocation.init();
+                geolocation.listen();
             });
         });
     </script>
