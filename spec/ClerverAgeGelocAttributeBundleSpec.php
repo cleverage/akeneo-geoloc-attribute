@@ -30,6 +30,10 @@ class ClerverAgeGelocAttributeBundleSpec extends ObjectBehavior
     function it_creates_doctrine_mapping_driver(ContainerBuilder $containerBuilder)
     {
         $containerBuilder->addCompilerPass(
+            Argument::type('CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\Compiler\RegisterTargetEntityPass')
+        )->shouldBeCalled();
+
+        $containerBuilder->addCompilerPass(
             Argument::type('Oro\Bundle\EntityBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass')
         )->shouldBeCalled();
 

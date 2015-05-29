@@ -11,6 +11,7 @@
 
 namespace CleverAge\Bundle\GelocAttributeBundle;
 
+use CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\Compiler\RegisterTargetEntityPass;
 use Oro\Bundle\EntityBundle\DependencyInjection\Compiler\DoctrineOrmMappingsPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -22,6 +23,8 @@ class ClerverAgeGelocAttributeBundle extends Bundle
      */
     public function build(ContainerBuilder $container)
     {
+        $container->addCompilerPass(new RegisterTargetEntityPass());
+
         $container->addCompilerPass(DoctrineOrmMappingsPass::createYamlMappingDriver(
             array(dirname(__FILE__).'/Resources/config/doctrine/model' => 'CleverAge\Bundle\GelocAttributeBundle\Model'),
             array('doctrine.orm.entity_manager')

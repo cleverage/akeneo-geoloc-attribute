@@ -37,7 +37,7 @@ class GeolocationType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(['data_class' => 'CleverAge\Bundle\GelocAttributeBundle\Model\ProductGeolocation']);
+        $resolver->setDefaults(['data_class' => 'CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation']);
     }
 
     /**

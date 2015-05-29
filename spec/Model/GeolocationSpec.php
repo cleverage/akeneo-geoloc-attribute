@@ -19,6 +19,7 @@ class GeolocationSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation');
+        $this->shouldImplement('CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface');
     }
 
     function it_has_id_default()

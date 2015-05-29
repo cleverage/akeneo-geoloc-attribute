@@ -26,7 +26,6 @@ class ClerverAgeGelocAttributeExtension extends Extension implements PrependExte
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('attribute.yml');
-        $loader->load('event_listener.yml');
         $loader->load('model.yml');
     }
 

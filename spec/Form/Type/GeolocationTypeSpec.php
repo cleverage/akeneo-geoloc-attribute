@@ -36,7 +36,7 @@ class GeolocationTypeSpec extends ObjectBehavior
     function it_has_option(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
-            ['data_class' => 'CleverAge\Bundle\GelocAttributeBundle\Model\ProductGeolocation']
+            ['data_class' => 'CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation']
         )->shouldBeCalled();
 
         $this->setDefaultOptions($resolver);

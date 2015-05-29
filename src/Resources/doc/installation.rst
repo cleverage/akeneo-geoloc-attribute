@@ -8,7 +8,7 @@ If you have `Composer installed globally <http://getcomposer.org/doc/00-intro.md
 
 .. code-block:: bash
 
-    $ composer require "sylius/resource-bundle"
+    $ composer require "cleverage/akeneo-geoloc-attribute"
 
 Otherwise you have to download .phar file.
 

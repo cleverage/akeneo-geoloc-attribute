@@ -11,7 +11,7 @@
 
 namespace CleverAge\Bundle\GelocAttributeBundle\Model;
 
-class Geolocation
+class Geolocation implements GeolocationInterface
 {
     /** @var int */
     private $id;
@@ -21,7 +21,7 @@ class Geolocation
     private $longitude;
 
     /**
-     * @return integer
+     * {@inheritdoc}
      */
     public function getId()
     {
@@ -29,7 +29,7 @@ class Geolocation
     }
 
     /**
-     * @return float
+     * {@inheritdoc}
      */
     public function getLatitude()
     {
@@ -37,9 +37,7 @@ class Geolocation
     }
 
     /**
-     * @param float $latitude
-     *
-     * @return $this
+     * {@inheritdoc}
      */
     public function setLatitude($latitude)
     {
@@ -49,7 +47,7 @@ class Geolocation
     }
 
     /**
-     * @return float
+     * {@inheritdoc}
      */
     public function getLongitude()
     {
@@ -57,9 +55,7 @@ class Geolocation
     }
 
     /**
-     * @param float $longitude
-     *
-     * @return $this
+     * {@inheritdoc}
      */
     public function setLongitude($longitude)
     {
@@ -69,7 +65,7 @@ class Geolocation
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function __toString()
     {
