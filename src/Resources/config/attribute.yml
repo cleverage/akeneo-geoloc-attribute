@@ -24,6 +24,8 @@ services:
 
     cleverage.geolocation.form_type:
         class: %cleverage.geolocation.form_type.class%
+        arguments:
+            - %cleverage.geolocation.model.geolocation.class%
         tags:
             - { name: form.type, alias: cleverage_form_geolocation }
 

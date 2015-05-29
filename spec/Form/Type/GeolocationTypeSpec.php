@@ -18,6 +18,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class GeolocationTypeSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $this->beConstructedWith('CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation');
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\Form\Type\GeolocationType');

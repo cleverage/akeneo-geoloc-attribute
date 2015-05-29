@@ -17,6 +17,14 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class GeolocationType extends AbstractType
 {
+    /** @var string */
+    private $geolocaltionModel;
+
+    public function __construct($geolocaltionModel = null)
+    {
+        $this->geolocaltionModel = $geolocaltionModel;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -37,7 +45,7 @@ class GeolocationType extends AbstractType
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(['data_class' => 'CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation']);
+        $resolver->setDefaults(['data_class' => $this->geolocaltionModel]);
     }
 
     /**
