@@ -4,34 +4,32 @@ GelocAttributeBundle  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/
 Geolocation is an attribute for Akeneo PIM, it adds two fields (latitude and longitude) to your product form. You
 can fill automatically them by using a google maps. See the screenshot :
 
-![Geolocation](https://github.com/cleverage/akeneo-geoloc-attribute/tree/master/src/Resources/public/img/geolocation.png)
+![Geolocation](https://github.com/cleverage/akeneo-geoloc-attribute/blob/master/src/Resources/public/img/geolocation.png?raw=true)
 
 Installation
 ------------
 
-We assume you're familiar with `Composer <http://packagist.org>`_, a dependency manager for PHP.
-Use the following command to add the bundle to your ``composer.json`` and download the package.
+We assume you're familiar with [Composer](http://packagist.org), a dependency manager for PHP.
+Use the following command to add the bundle to your `composer.json` and download the package.
 
-If you have `Composer installed globally <http://getcomposer.org/doc/00-intro.md#globally>`_.
+If you have [Composer installed globally](<http://getcomposer.org/doc/00-intro.md#globally).
 
-.. code-block:: bash
-
+```
     $ composer require "cleverage/akeneo-geoloc-attribute"
-
+```
 Otherwise you have to download .phar file.
 
-.. code-block:: bash
-
+```
     $ curl -sS https://getcomposer.org/installer | php
     $ php composer.phar require "cleverage/akeneo-geoloc-attribute"
+```
 
 Adding required bundles to the kernel
 -------------------------------------
 
 You just need to enable proper bundles inside the kernel.
 
-.. code-block:: php
-
+```php
     <?php
 
     // app/AppKernel.php
@@ -42,23 +40,24 @@ You just need to enable proper bundles inside the kernel.
             new CleverAge\Bundle\GelocAttributeBundle\ClerverAgeGelocAttributeBundle(),
         );
     }
+```
 
 Updating the database
 ---------------------
 
-.. code-block:: bash
-
+```
     php app/console doctrine:schema:update --force
+```
 
 Updating the assets
 -------------------
 
-This bundle provides a css file named ``geolocation.css``, you need to include it in your layout. After that, your need
+This bundle provides a css file named `geolocation.css`, you need to include it in your layout. After that, your need
 to install your assets like that :
 
-.. code-block:: bash
-
+```
     php app/console pim:install:assets
+```
 
 [phpspec](http://phpspec.net) examples
 --------------------------------------
