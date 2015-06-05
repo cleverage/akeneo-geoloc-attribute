@@ -1,4 +1,4 @@
-GelocAttributeBundle  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/?branch=master) [![Build Status](https://travis-ci.org/cleverage/akeneo-geoloc-attribute.svg?branch=master)](https://travis-ci.org/cleverage/akeneo-geoloc-attribute)
+GeolocAttributeBundle [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/cleverage/akeneo-geoloc-attribute/?branch=master) [![Build Status](https://travis-ci.org/cleverage/akeneo-geoloc-attribute.svg?branch=master)](https://travis-ci.org/cleverage/akeneo-geoloc-attribute)
 ====================
 
 Geolocation is an attribute for Akeneo PIM, it adds latitude and longitude field to your product form. You
@@ -37,7 +37,7 @@ You just need to enable proper bundles inside the kernel.
     public function registerBundles()
     {
         $bundles = array(
-            new CleverAge\Bundle\GelocAttributeBundle\ClerverAgeGelocAttributeBundle(),
+            new CleverAge\Bundle\GeolocAttributeBundle\CleverAgeGeolocAttributeBundle(),
         );
     }
 ```

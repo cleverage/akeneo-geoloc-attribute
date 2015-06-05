@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Geloc Attribute Bundle package.
+ * This file is part of the Geoloc Attribute Bundle package.
  *
  * (c) Clever Age
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\CleverAge\Bundle\GelocAttributeBundle\DependencyInjection;
+namespace spec\CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class ClerverAgeGelocAttributeExtensionSpec extends ObjectBehavior
+class CleverAgeGeolocAttributeExtensionSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\ClerverAgeGelocAttributeExtension');
+        $this->shouldHaveType('CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection\CleverAgeGeolocAttributeExtension');
     }
 
     public function it_is_extension()
@@ -37,7 +37,7 @@ class ClerverAgeGelocAttributeExtensionSpec extends ObjectBehavior
         $container->prependExtensionConfig('twig', [
             'form' => [
                 'resources' => [
-                    'ClerverAgeGelocAttributeBundle::form.html.twig',
+                    'CleverAgeGeolocAttributeBundle::form.html.twig',
                 ],
             ]
         ])->shouldBeCalled();

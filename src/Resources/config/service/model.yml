@@ -1,6 +1,6 @@
 parameters:
     ### Pim models
-    pim_catalog.entity.product_value.class: CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue
+    pim_catalog.entity.product_value.class: CleverAge\Bundle\GeolocAttributeBundle\Model\ProductValue
 
     ### Bundle models
-    cleverage.geolocation.model.geolocation.class: CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation
+    cleverage.geolocation.model.geolocation.class: CleverAge\Bundle\GeolocAttributeBundle\Model\Geolocation

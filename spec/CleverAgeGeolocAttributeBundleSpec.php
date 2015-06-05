@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Geloc Attribute Bundle package.
+ * This file is part of the Geoloc Attribute Bundle package.
  *
  * (c) Clever Age
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\CleverAge\Bundle\GelocAttributeBundle;
+namespace spec\CleverAge\Bundle\GeolocAttributeBundle;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class ClerverAgeGelocAttributeBundleSpec extends ObjectBehavior
+class CleverAgeGeolocAttributeBundleSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\ClerverAgeGelocAttributeBundle');
+        $this->shouldHaveType('CleverAge\Bundle\GeolocAttributeBundle\CleverAgeGeolocAttributeBundle');
     }
 
     function it_is_a_bundle()
@@ -30,7 +30,7 @@ class ClerverAgeGelocAttributeBundleSpec extends ObjectBehavior
     function it_creates_doctrine_mapping_driver(ContainerBuilder $containerBuilder)
     {
         $containerBuilder->addCompilerPass(
-            Argument::type('CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\Compiler\RegisterTargetEntityPass')
+            Argument::type('CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection\Compiler\RegisterTargetEntityPass')
         )->shouldBeCalled();
 
         $containerBuilder->addCompilerPass(

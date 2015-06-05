@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Geloc Attribute Bundle package.
+ * This file is part of the Geoloc Attribute Bundle package.
  *
  * (c) Clever Age
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\Compiler;
+namespace CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection\Compiler;
 
 use Akeneo\Bundle\StorageUtilsBundle\DependencyInjection\Compiler\AbstractResolveDoctrineTargetModelPass;
 
@@ -21,7 +21,7 @@ class RegisterTargetEntityPass extends AbstractResolveDoctrineTargetModelPass
     protected function getParametersMapping()
     {
         return [
-            'CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface' => 'cleverage.geolocation.model.geolocation.class',
+            'CleverAge\Bundle\GeolocAttributeBundle\Model\GeolocationInterface' => 'cleverage.geolocation.model.geolocation.class',
         ];
     }
 }

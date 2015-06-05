@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\CleverAge\Bundle\GelocAttributeBundle\Model;
+namespace spec\CleverAge\Bundle\GeolocAttributeBundle\Model;
 
-use CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation;
+use CleverAge\Bundle\GeolocAttributeBundle\Model\Geolocation;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -10,7 +10,7 @@ class ProductValueSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue');
+        $this->shouldHaveType('CleverAge\Bundle\GeolocAttributeBundle\Model\ProductValue');
     }
 
     function it_is_a_product_value()

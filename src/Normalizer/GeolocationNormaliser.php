@@ -1,11 +1,11 @@
 <?php
 
-namespace CleverAge\Bundle\GelocAttributeBundle\Normalizer;
+namespace CleverAge\Bundle\GeolocAttributeBundle\Normalizer;
 
-use CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface;
+use CleverAge\Bundle\GeolocAttributeBundle\Model\GeolocationInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-class GelocationNormaliser implements NormalizerInterface
+class GeolocationNormaliser implements NormalizerInterface
 {
     protected $supportedFormats = ['csv', 'json'];
 

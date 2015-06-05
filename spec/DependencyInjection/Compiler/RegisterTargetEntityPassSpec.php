@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Geloc Attribute Bundle package.
+ * This file is part of the Geoloc Attribute Bundle package.
  *
  * (c) Clever Age
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\Compiler;
+namespace spec\CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection\Compiler;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -18,7 +18,7 @@ class RegisterTargetEntityPassSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\DependencyInjection\Compiler\RegisterTargetEntityPass');
+        $this->shouldHaveType('CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection\Compiler\RegisterTargetEntityPass');
     }
 
     function it_is_a_compiler_pass()

@@ -1,4 +1,4 @@
-CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation:
+CleverAge\Bundle\GeolocAttributeBundle\Model\Geolocation:
     properties:
         latitude:
             - Range:

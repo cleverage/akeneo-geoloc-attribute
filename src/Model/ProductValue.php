@@ -1,6 +1,6 @@
 <?php
 
-namespace CleverAge\Bundle\GelocAttributeBundle\Model;
+namespace CleverAge\Bundle\GeolocAttributeBundle\Model;
 
 use Pim\Bundle\CatalogBundle\Model\AbstractProductValue as BaseProductValue;
 

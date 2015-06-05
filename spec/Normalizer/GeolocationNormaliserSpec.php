@@ -1,16 +1,16 @@
 <?php
 
-namespace spec\CleverAge\Bundle\GelocAttributeBundle\Normalizer;
+namespace spec\CleverAge\Bundle\GeolocAttributeBundle\Normalizer;
 
-use CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface;
+use CleverAge\Bundle\GeolocAttributeBundle\Model\GeolocationInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class GelocationNormaliserSpec extends ObjectBehavior
+class GeolocationNormaliserSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\Normalizer\GelocationNormaliser');
+        $this->shouldHaveType('CleverAge\Bundle\GeolocAttributeBundle\Normalizer\GeolocationNormaliser');
     }
 
     function it_is_normalizer()

@@ -1,4 +1,4 @@
-CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue:
+CleverAge\Bundle\GeolocAttributeBundle\Model\ProductValue:
     type: entity
     table: cleverage_catalog_product_value
     indexes:
@@ -126,7 +126,7 @@ CleverAge\Bundle\GelocAttributeBundle\Model\ProductValue:
                     referencedColumnName: id
                     onDelete: 'SET NULL'
         geolocation:
-            targetEntity: CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface
+            targetEntity: CleverAge\Bundle\GeolocAttributeBundle\Model\GeolocationInterface
             cascade:
                 - remove
                 - persist

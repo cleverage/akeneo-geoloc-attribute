@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Geloc Attribute Bundle package.
+ * This file is part of the Geoloc Attribute Bundle package.
  *
  * (c) Clever Age
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace CleverAge\Bundle\GelocAttributeBundle\DependencyInjection;
+namespace CleverAge\Bundle\GeolocAttributeBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class ClerverAgeGelocAttributeExtension extends Extension implements PrependExtensionInterface
+class CleverAgeGeolocAttributeExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class ClerverAgeGelocAttributeExtension extends Extension implements PrependExte
             $container->prependExtensionConfig('twig', [
                 'form' => [
                     'resources' => [
-                        'ClerverAgeGelocAttributeBundle::form.html.twig',
+                        'CleverAgeGeolocAttributeBundle::form.html.twig',
                     ],
                 ],
             ]);

@@ -18,11 +18,11 @@
   },
 
   "autoload": {
-    "psr-4": { "CleverAge\\Bundle\\GelocAttributeBundle\\": "src/" }
+    "psr-4": { "CleverAge\\Bundle\\GeolocAttributeBundle\\": "src/" }
   },
 
   "autoload-dev": {
-    "psr-4": { "CleverAge\\Bundle\\GelocAttributeBundle\\spec\\": "spec/" }
+    "psr-4": { "CleverAge\\Bundle\\GeolocAttributeBundle\\spec\\": "spec/" }
   },
 
   "extra": {
