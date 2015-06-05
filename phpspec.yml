@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: CleverAge\Bundle\GelocAttributeBundle
-        psr4_prefix: CleverAge\Bundle\GelocAttributeBundle
+        namespace: CleverAge\Bundle\GeolocAttributeBundle
+        psr4_prefix: CleverAge\Bundle\GeolocAttributeBundle
         src_path: src

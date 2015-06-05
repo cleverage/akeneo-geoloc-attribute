@@ -4,6 +4,6 @@ config:
             deps:
                 - typeahead
     paths:
-        async: clerveragegelocattribute/js/vendors/requirejs/async
-        typeahead: clerveragegelocattribute/js/vendors/typeahead/typeahead
-        addresspicker: clerveragegelocattribute/js/vendors/addresspicker/addresspicker
+        async: cleveragegeolocattribute/js/vendors/requirejs/async
+        typeahead: cleveragegeolocattribute/js/vendors/typeahead/typeahead
+        addresspicker: cleveragegeolocattribute/js/vendors/addresspicker/addresspicker

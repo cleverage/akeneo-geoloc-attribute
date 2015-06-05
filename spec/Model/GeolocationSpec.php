@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Geloc Attribute Bundle package.
+ * This file is part of the Geoloc Attribute Bundle package.
  *
  * (c) Clever Age
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\CleverAge\Bundle\GelocAttributeBundle\Model;
+namespace spec\CleverAge\Bundle\GeolocAttributeBundle\Model;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -18,8 +18,8 @@ class GeolocationSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('CleverAge\Bundle\GelocAttributeBundle\Model\Geolocation');
-        $this->shouldImplement('CleverAge\Bundle\GelocAttributeBundle\Model\GeolocationInterface');
+        $this->shouldHaveType('CleverAge\Bundle\GeolocAttributeBundle\Model\Geolocation');
+        $this->shouldImplement('CleverAge\Bundle\GeolocAttributeBundle\Model\GeolocationInterface');
     }
 
     function it_has_id_default()

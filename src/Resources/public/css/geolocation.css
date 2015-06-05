@@ -1,11 +1,11 @@
-.gelocation-map {
+.geolocation-map {
     width: 500px;
     height: 500px;
     border: 1px solid #DDD;
     margin-top: 20px;
 }
 
-.gelocation-address {
+.geolocation-address {
     width: 500px;
 }
 
