@@ -2,7 +2,7 @@ parameters:
     ### Bundle classes
     cleverage.geolocation.attribute_type.class: CleverAge\Bundle\GeolocAttributeBundle\AttributeType\GeolocationType
     cleverage.geolocation.form_type.class: CleverAge\Bundle\GeolocAttributeBundle\Form\Type\GeolocationType
-    cleverage.geolocation.normalizer.class: CleverAge\Bundle\GeolocAttributeBundle\Form\Type\GeolocationType
+    cleverage.geolocation.normalizer.class: CleverAge\Bundle\GeolocAttributeBundle\Normalizer\GeolocationNormaliser
 
     ### Geolocation datagrid configuration
     pim_datagrid.product.attribute_type.cleverage_attribute_geolocation:
