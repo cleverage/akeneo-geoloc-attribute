@@ -3,6 +3,7 @@ parameters:
     cleverage.geolocation.attribute_type.class: CleverAge\Bundle\GeolocAttributeBundle\AttributeType\GeolocationType
     cleverage.geolocation.form_type.class: CleverAge\Bundle\GeolocAttributeBundle\Form\Type\GeolocationType
     cleverage.geolocation.normalizer.class: CleverAge\Bundle\GeolocAttributeBundle\Normalizer\GeolocationNormaliser
+    cleverage.geolocation.setter.class: CleverAge\Bundle\GeolocAttributeBundle\Updater\GeolocationSetter
 
     ### Geolocation datagrid configuration
     pim_datagrid.product.attribute_type.cleverage_attribute_geolocation:
@@ -34,3 +35,9 @@ services:
         tags:
             - { name: pim_serializer.normalizer, priority: 90 }
             - { name: pim_versioning.serializer.normalizer, priority: 90 }
+
+    cbo.updater.setter.geolocation:
+        class: %cleverage.geolocation.setter.class%
+        parent: pim_catalog.updater.setter.abstract
+        tags:
+            - { name: 'pim_catalog.updater.setter' }
