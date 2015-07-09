@@ -94,5 +94,5 @@ License can be found [here](https://github.com/cleverage/akeneo-geoloc-attribute
 Authors
 -------
 
-The bundle was originally created by [Arnaud Langlade](https://github.com/aRn0D). Sponsored by [Clever Age](http://clever-age.com)
+The bundle was originally created by [Arnaud Langlade](https://github.com/aRn0D). Sponsored by [Clever Age](http://clever-age.com).
 See the list of [contributors](https://github.com/cleverage/akeneo-geoloc-attribute/contributors).
